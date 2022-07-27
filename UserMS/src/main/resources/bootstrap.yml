@@ -1,0 +1,19 @@
+server:
+  port: 9100
+spring:
+   application:
+     name: UserMS
+   cloud:
+     consul:
+       host: localhost
+       discovery:
+         hostname: localhost
+       config:
+         fail-fast: true
+         enabled: true
+         prefixes: 
+           - config
+         default-context: application
+         profile-separator: "::"
+         format:  YAML
+         data-key: data

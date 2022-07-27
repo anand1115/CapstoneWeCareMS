@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: BookingMS-1
+          uri: http://localhost:9300/
+          predicates:
+            - Path=/booking/**
+        - id: UserMS-1
+          uri: http://localhost:9100/
+          predicates:
+            - Path=/user/**
+        - id: CoachMS-1
+          uri: http://localhost:9200/
+          predicates:
+            - Path=/coach/**
+          

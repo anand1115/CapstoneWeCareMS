@@ -1,0 +1,19 @@
+server:
+  port: 9200
+spring:
+  application:
+    name: CoachMS
+  cloud:
+    consul:
+      host: localhost
+      discovery:
+        hostname: localhost
+      config:
+        fail-fast: true
+        enabled: true
+        prefixes: 
+          - config
+        defaultContext: application
+        data-key: data
+        format: YAML
+        profile-separator: "::"
